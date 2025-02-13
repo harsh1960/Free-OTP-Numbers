@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Received OTPs - Free OTP Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+            text-align: center;
+            padding: 30px;
+            color: #333;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .number {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff6600;
+        }
+        .otp-box {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+            font-size: 18px;
+            margin-top: 15px;
+            text-align: left;
+            max-height: 350px;
+            overflow-y: auto;
+        }
+        .otp-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .app-name {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .otp-code {
+            font-size: 20px;
+            color: #ff0000;
+        }
+        .timestamp {
+            font-size: 14px;
+            color: #666;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .refresh-btn {
+            margin-top: 15px;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .refresh-btn:hover {
+            background: #0056b3;
+        }
+        .see-more {
+            margin-top: 15px;
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .see-more:hover {
+            background: #1e7e34;
+        }
+        .note {
+            background: #ffeb3b;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #333;
+            margin-top: 15px;
+        }
+        .disclaimer {
+            font-size: 14px;
+            color: red;
+            margin-top: 15px;
+        }
+        .ad-container {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        .ad-container h3 {
+            color: #ff6600;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Native Banner Ad at the Top -->
+    <div class="ad-container">
+        <h3>Sponsored Ads</h3>
+        <script async="async" data-cfasync="false" src="//pl25848929.effectiveratecpm.com/9ff31e5bee17faecf6847e891740fc4f/invoke.js"></script>
+        <div id="container-9ff31e5bee17faecf6847e891740fc4f"></div>
+    </div>
+
+    <h1>📩 Latest OTPs Received</h1>
+    <h3>Refresh every 2 minutes. Click the button to refresh.</h3>
+
+    <button class="refresh-btn" onclick="refreshPage()">🔄 Refresh Now</button>
+
+    <div class="container">
+        <p class="header">📞 OTPs received on number:</p>
+        <p class="number">+91 9837116244</p>
+
+        <div class="otp-box" id="otpContainer">
+            <!-- OTPs will be inserted here dynamically -->
+        </div>
+
+        <button class="see-more" onclick="displayOTPs(getSavedOTPs())">📜 See More OTPs</button>
+    </div>
+
+    <p class="note">⚠️ Note: Older OTPs will disappear after 5 minutes.</p>
+    <p class="disclaimer">🔴 Warning: These OTPs are public and visible to others. Do not use for personal accounts.</p>
+
+    <p class="footer">© 2025 Free OTP Generator.</p>
+
+    <!-- Social Bar Banner -->
+    <script type='text/javascript' src='//pl25849221.effectiveratecpm.com/a9/d9/82/a9d982862719adb3a9834cdd837831e0.js'></script>
+
+    <!-- Direct Link Ad -->
+    <a href="https://www.effectiveratecpm.com/ejri4nex?key=1e1afaaca14888f3c64483de313cab80" target="_blank">Click Here for Exclusive Offers</a>
+
+    <script>
+        let allApps = [
+            "WhatsApp", "Facebook", "Instagram", "Paytm", "Snapchat", 
+            "Amazon", "Netflix", "Telegram", "Dream11", "My11Circle", "MPL", "FanFight", "BalleBaazi",
+            "Winzo", "Zupee", "Meesho", "Flipkart", "Uber", "PhonePe", "Probo", "GooglePay", 
+            "Oyo", "Groww", "Upstocks", "MobiKwik", "CRED", "RozDhan", "FreeCharge"
+        ];
+
+        function generateOTP() {
+            let newOtps = [];
+            let selectedApps = [...allApps];
+
+            for (let i = 0; i < 5; i++) {
+                if (selectedApps.length === 0) break;
+
+                let randomIndex = Math.floor(Math.random() * selectedApps.length);
+                let app = selectedApps.splice(randomIndex, 1)[0];
+                let otp = Math.floor(100000 + Math.random() * 900000);
+                let time = new Date();
+                let formattedTime = time.getHours() + ":" + 
+                                   ((time.getMinutes() < 10) ? "0" : "") + time.getMinutes() + ":" + 
+                                   ((time.getSeconds() < 10) ? "0" : "") + time.getSeconds();
+                newOtps.push({ app, otp, time: formattedTime });
+            }
+            return newOtps;
+        }
+
+        function saveOTP(otps) {
+            localStorage.setItem("otpData", JSON.stringify(otps));
+            localStorage.setItem("otpTime", Date.now());
+        }
+
+        function getSavedOTPs() {
+            let savedOTPs = localStorage.getItem("otpData");
+            let savedTime = localStorage.getItem("otpTime");
+
+            if (savedOTPs && savedTime) {
+                let timeDiff = (Date.now() - savedTime) / 1000;
+                if (timeDiff < 60) {
+                    return JSON.parse(savedOTPs);
+                }
+            }
+            return null;
+        }
+
+        function displayOTPs(otps) {
+            let otpContainer = document.getElementById("otpContainer");
+            otpContainer.innerHTML = "";
+            otps.forEach(otp => {
+                otpContainer.innerHTML += `
+                    <div class="otp-item">
+                        <span class="app-name">${otp.app}</span> OTP: 
+                        <span class="otp-code">${otp.otp}</span>
+                        <br><span class="timestamp">Received at: ${otp.time}</span>
+                    </div>
+                `;
+            });
+        }
+
+        function refreshPage() {
+            let newOTPs = generateOTP();
+            saveOTP(newOTPs);
+            displayOTPs(newOTPs);
+        }
+
+        window.onload = function() {
+            let savedOTPs = getSavedOTPs();
+            displayOTPs(savedOTPs || generateOTP());
+        };
+    </script>
+
+</body>
+</html>
